@@ -1,0 +1,26 @@
+.keyboard{
+    width: 100%;
+    height: 70px;
+    background-color: var(--app-color-3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.keyboard form{
+    display: flex;
+    align-items: center;
+    width: 90%;
+}
+
+.keyboard form textarea{
+    flex-grow: 1;
+    height: 30px;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.keyboard form button{
+    width: 80px;
+    height: 30px;
+}

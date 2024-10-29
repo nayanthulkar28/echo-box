@@ -1,0 +1,6 @@
+.left-card{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}

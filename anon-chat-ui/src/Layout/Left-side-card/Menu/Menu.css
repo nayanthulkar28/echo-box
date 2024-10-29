@@ -1,0 +1,20 @@
+.Menu{
+    width: 100%;
+    height: 70px;
+    background-color: var(--app-color-2);
+    display: flex;
+}
+
+.Profile, .Settings{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.Menu-items{
+    width: 30px;
+    height: 30px;
+}

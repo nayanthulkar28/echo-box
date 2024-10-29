@@ -1,0 +1,6 @@
+.home{
+    width: 98vw;
+    height: 97vh;
+    display: flex;
+    flex-direction: row;
+}

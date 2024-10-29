@@ -1,0 +1,41 @@
+.friends-container{
+    font-family: var(--text-font);
+    font-size: 20px;
+    background-color: var(--app-color-3);
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.friends-container h3{
+    padding-left: 30px;
+    margin: 20px auto 5px;
+    font-size: 30px;
+}
+
+.friend-card{
+    display: flex;
+    align-items: center;
+    padding: 10px 0px 10px 20px;
+    cursor: pointer;
+    margin: 0;
+}
+
+.friend-card img{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid black;
+    margin-right: 10px;
+}
+
+.divider{
+    height: 0.5px;
+    width: 90%;
+    background-color: black;
+    display: flex;
+    margin: auto;
+}
+
+.friend-card-container:hover {
+    opacity: 0.5;
+}
