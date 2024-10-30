@@ -1,0 +1,13 @@
+.nav-bar {
+    list-style-type: none;
+    display: flex;
+    margin-left: auto;
+}
+
+.nav-bar li {
+    font-family: var(--text-font);
+    font-size: 12px;
+    color: white;
+    padding-left: 32px;
+    cursor: pointer;
+}

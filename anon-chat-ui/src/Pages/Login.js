@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Title from '../Layout/Left-side-card/Title/Title'
+import Title from '../Layout/TitleBar/Title/Title'
 import './Login.css'
 import axios from "axios"
 import { useNavigate } from 'react-router-dom';
