@@ -58,7 +58,7 @@ func (fu *FriendUsecase) MakeFriends(user1 domain.UserData, user2 domain.UserDat
 }
 
 func (fu *FriendUsecase) GetFriendsByUsername(username string) ([]domain.UserData, error) {
-	var friendList []domain.UserData
+	friendList := make([]domain.UserData, 0)
 	friends, err := fu.userRepo.GetFriendsByUsername(context.Background(), username)
 	if err != nil {
 		return []domain.UserData{}, fmt.Errorf("unable to fetch friends %v", err)

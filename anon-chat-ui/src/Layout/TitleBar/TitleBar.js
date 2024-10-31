@@ -6,7 +6,7 @@ const TitleBar = ({onSwitch}) => {
     return(
         <div className="title-bar">
             <div className='title-container'>
-                <Title/>
+                <Title class_name="title-home"/>
             </div>
             <NavBar onSwitch={onSwitch}/>
         </div>

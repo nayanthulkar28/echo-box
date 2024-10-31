@@ -51,11 +51,15 @@ const Login = () => {
     return(
         <div className='login-container'>
             <div className="login-form">
-                <Title/>
+                <div className='login-title'>
+                    <Title class_name="title-login"/>
+                </div>
                 <input type='text' name='username' placeholder='username' value={username} onChange={(e)=>setUsername(e.target.value)}/>
                 <input type='text' name='password' placeholder='password' value={password} onChange={(e)=>setPassword(e.target.value)}/>
-                <button type='submit' onClick={handleLogin}>Login</button>
-                <button type='submit' onClick={handleSignUp}>Create an account</button>
+                <div className='button-container'>
+                    <button type='submit' onClick={handleSignUp}>Sign Up</button>
+                    <button type='submit' onClick={handleLogin}>Login</button>
+                </div>
             </div>
         </div>
     );

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './Keyboard.css'
+import { IoSend } from "react-icons/io5";
 import { useWebSocket } from '../../../hooks/Websocket';
 
 const Keyboard = ({friend, appendMessage}) => {
@@ -8,6 +9,7 @@ const Keyboard = ({friend, appendMessage}) => {
 
     const handleSend = (e) => {
         e.preventDefault()
+        if(message==="") return
         const req = {
             to: {
                 user: {
@@ -28,8 +30,10 @@ const Keyboard = ({friend, appendMessage}) => {
     return(
         <div className="keyboard">
             <form onSubmit={handleSend}>
-                <textarea name='message' value={message} placeholder='Message' onChange={(e)=>setMessage(e.target.value)}/>
-                <button type='submit'>Send</button>
+                <textarea name='message' value={message} placeholder='Write a message ...' onChange={(e)=>setMessage(e.target.value)}/>
+                <button type='submit'>
+                    <IoSend/>
+                </button>
             </form>
         </div>
     );

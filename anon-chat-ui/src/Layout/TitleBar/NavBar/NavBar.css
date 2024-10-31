@@ -4,10 +4,17 @@
     margin-left: auto;
 }
 
-.nav-bar li {
+.focus {
+    color: var(--app-color-4);
+}
+
+.not-focus {
+    color: var(--text-color);
+}
+
+.nav-bar-items {
     font-family: var(--text-font);
     font-size: 12px;
-    color: white;
     padding-left: 32px;
     cursor: pointer;
 }

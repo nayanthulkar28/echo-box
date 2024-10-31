@@ -8,7 +8,7 @@
 .chat-title{
     width: 100%;
     height: 64px;
-    background-color: var(--app-color-3);
+    background-color: var(--app-color-2);
     display: flex;
     align-items: center;
 }
@@ -26,6 +26,7 @@
     font-size: 20px;
     font-weight: 560;
     padding-top: 4px;
+    color: var(--text-color);
 }
 
 .chat-title button{
@@ -33,11 +34,17 @@
     margin-right: 50px;
     width: 100px;
     height: 30px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--text-color);
+    color: var(--app-color-1);
+    font-size: 12px;
+    font-weight: 400;
 }
 
 .chat-body{
     flex-grow: 1;
-    background-color: var(--app-color-4);
+    background-color: var(--app-color-3);
     overflow-y: auto;
     display: flex;
     flex-direction: column-reverse;
@@ -46,14 +53,15 @@
 
 .chat-message {
     font-family: var(--text-font);
-    font-size: 18px;
-    font-weight: 450;
-    background-color: var(--app-color-3);
-    border-radius: 10px;
-    margin: 2px;
-    padding: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: var(--app-color-2);
+    border-radius: 20px;
+    margin: 4px;
+    padding: 8px 12px;
     max-width: 600px;
     overflow-wrap: break-word;
+    color: var(--text-color);
 }
 
 .float-right {

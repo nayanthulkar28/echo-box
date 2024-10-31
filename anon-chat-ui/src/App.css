@@ -4,14 +4,11 @@
 :root{
   --title-font: Pacifico, cursive;
   --text-font: Poppins, sans-serif;
-  /* --app-color-1: #2E073F;
-  --app-color-2: #7A1CAC;
-  --app-color-3: #AD49E1;
-  --app-color-4: #EBD3F8; */
-  --app-color-1: #092635;
-  --app-color-2: #1B4242;
-  --app-color-3: #5C8374;
-  --app-color-4: #9EC8B9;
+  --text-color: #d7d7d7;
+  --app-color-1: #071e22;
+  --app-color-2: #09262c;
+  --app-color-3: #0b3137;
+  --app-color-4: #f4c095;
 }
 
 .app {
@@ -19,6 +16,6 @@
   justify-content: center;
   height: 100vh;
   align-items: center;
-  background-color: #04121a;
-  padding: 16px 200px 24px;
+  background-color: var(--app-color-1);
+  padding: 16px 200px 32px;
 }
