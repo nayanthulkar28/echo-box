@@ -1,0 +1,20 @@
+.nav-bar {
+    list-style-type: none;
+    display: flex;
+    margin-left: auto;
+}
+
+.focus {
+    color: var(--app-color-4);
+}
+
+.not-focus {
+    color: var(--text-color);
+}
+
+.nav-bar-items {
+    font-family: var(--text-font);
+    font-size: 12px;
+    padding-left: 32px;
+    cursor: pointer;
+}

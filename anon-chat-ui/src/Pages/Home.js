@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import LeftCard from '../Layout/Left-side-card/Left-side-card';
 import RightCard from '../Layout/Right-side-card/Right-side-card';
+import TitleBar from '../Layout/TitleBar/TitleBar';
 import './Home.css'
 import { useWebSocket } from '../hooks/Websocket';
 
@@ -38,8 +39,11 @@ const Home = () => {
 
     return(
         <div className='home'>
-            <LeftCard onSwitch={handleComponentSwitch}/>
-            <RightCard component={rightComponent}/>
+            <TitleBar onSwitch={handleComponentSwitch}/>
+            <div className='home-body'>
+                <LeftCard onSwitch={handleComponentSwitch}/>
+                <RightCard component={rightComponent}/>
+            </div>
         </div>
     );
 }

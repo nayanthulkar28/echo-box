@@ -1,8 +1,8 @@
 import './Title.css'
 
-const Title = () => {
+const Title = ({class_name}) => {
     return(
-        <div className="title">
+        <div className={"title " + class_name}>
             Anon Chat
         </div>
     );

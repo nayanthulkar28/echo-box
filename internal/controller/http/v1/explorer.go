@@ -50,6 +50,7 @@ func (e *Explorer) RunExplorer() {
 			fmt.Println(err)
 			continue
 		}
+		user1FriendList = append(user1FriendList, user1)
 
 		for {
 			user2, open = <-e.List
