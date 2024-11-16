@@ -1,2 +1,2 @@
-# anon-chat
-Anon Chat Web App
+# Echo box
+Anonymous Chat Web App

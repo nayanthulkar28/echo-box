@@ -1,4 +1,4 @@
-module anon-chat
+module echo-box
 
 go 1.22.4
 

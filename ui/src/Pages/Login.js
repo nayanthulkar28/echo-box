@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks/AuthProvider';
 
 const Login = () => {
-    console.log('login')
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const navigate=useNavigate()
@@ -14,12 +13,12 @@ const Login = () => {
 
     useEffect(() => {
         if(userContext.user != null) {
-            navigate("/", {replace: true})
+            navigate("/echo-box", {replace: true})
         }
     })
 
     const handleSignUp = () => {
-        axios.post("http://localhost:8080/api/v1/sign-up",
+        axios.post("http://localhost:8090/echo-box/api/v1/sign-up",
             {
                 username: username,
                 password: password
@@ -32,7 +31,7 @@ const Login = () => {
     }
 
     const handleLogin = () => {
-        axios.post("http://localhost:8080/api/v1/login",
+        axios.post("http://localhost:8090/echo-box/api/v1/login",
             {
                 username: username,
                 password: password
@@ -41,7 +40,7 @@ const Login = () => {
             userContext.LoginAction(res.data)
             setUsername("")
             setPassword("")
-            navigate("/")
+            navigate("/echo-box")
         })
         .catch((error)=>{
             console.log(error)

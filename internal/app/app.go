@@ -1,11 +1,11 @@
 package app
 
 import (
-	"anon-chat/config"
-	v1 "anon-chat/internal/controller/http/v1"
-	"anon-chat/internal/repo"
-	"anon-chat/internal/usecase"
-	"anon-chat/pkg/postgres"
+	"echo-box/config"
+	v1 "echo-box/internal/controller/http/v1"
+	"echo-box/internal/repo"
+	"echo-box/internal/usecase"
+	"echo-box/pkg/postgres"
 	"fmt"
 
 	"github.com/gin-gonic/gin"
@@ -34,5 +34,5 @@ func Run(cfg *config.Config) {
 	defer close(explorer.List)
 
 	v1.NewRouter(router, middleware, authUsecase, userUsecase, friendUsecase, wsManager, explorer)
-	router.Run()
+	router.Run(fmt.Sprintf(":%s", cfg.Http.Port))
 }

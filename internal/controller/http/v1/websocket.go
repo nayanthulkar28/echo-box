@@ -1,9 +1,9 @@
 package v1
 
 import (
-	"anon-chat/internal/domain"
-	"anon-chat/internal/usecase"
-	"anon-chat/pkg"
+	"echo-box/internal/domain"
+	"echo-box/internal/usecase"
+	"echo-box/pkg"
 	"encoding/json"
 	"fmt"
 	"net/http"
@@ -18,7 +18,7 @@ var (
 		WriteBufferSize: 1024,
 		CheckOrigin: func(r *http.Request) bool {
 			origin := r.Header.Get("origin")
-			return origin == "http://localhost:3000"
+			return origin == "http://localhost:4000"
 		},
 	}
 )

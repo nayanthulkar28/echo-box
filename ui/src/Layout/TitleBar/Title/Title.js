@@ -3,7 +3,7 @@ import './Title.css'
 const Title = ({class_name}) => {
     return(
         <div className={"title " + class_name}>
-            Anon Chat
+            Echo Box
         </div>
     );
 }

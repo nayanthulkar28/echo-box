@@ -1,8 +1,8 @@
 package v1
 
 import (
-	"anon-chat/internal/domain"
-	"anon-chat/internal/usecase"
+	"echo-box/internal/domain"
+	"echo-box/internal/usecase"
 	"encoding/json"
 	"fmt"
 	"sync"

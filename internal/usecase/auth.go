@@ -1,10 +1,10 @@
 package usecase
 
 import (
-	"anon-chat/internal/domain"
-	"anon-chat/internal/repo"
-	"anon-chat/pkg"
 	"context"
+	"echo-box/internal/domain"
+	"echo-box/internal/repo"
+	"echo-box/pkg"
 	"fmt"
 	"time"
 

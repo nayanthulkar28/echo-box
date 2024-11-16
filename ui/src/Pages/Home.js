@@ -6,7 +6,6 @@ import './Home.css'
 import { useWebSocket } from '../hooks/Websocket';
 
 const Home = () => {
-    console.log('home')
     const ws = useWebSocket()
     const [rightComponent, setRightComponent] = useState(
         {

@@ -1,10 +1,9 @@
 package repo
 
 import (
-	"anon-chat/internal/domain"
-	"anon-chat/pkg/postgres"
 	"context"
-	"fmt"
+	"echo-box/internal/domain"
+	"echo-box/pkg/postgres"
 
 	sq "github.com/Masterminds/squirrel"
 	"github.com/jackc/pgx/v4"
@@ -49,7 +48,7 @@ func (r *UserRepo) GetUserByUsername(ctx context.Context, username string) (*dom
 
 	row := r.Pool.QueryRow(ctx, sql, args...)
 
-	err = row.Scan(&user.Id, &user.Username, &user.Password, &user.CreatedAt, &user.UpdatedAt, &user.Friends)
+	err = row.Scan(&user.Id, &user.Username, &user.Password, &user.Friends, &user.CreatedAt, &user.UpdatedAt)
 	if err != nil {
 		if err == pgx.ErrNoRows {
 			return &user, nil
@@ -93,23 +92,19 @@ func (r *UserRepo) GetFriendsByUsername(ctx context.Context, username string) ([
 		Where("username IN ("+subQ+")", subQArgs...).
 		ToSql()
 
-	fmt.Println(sql)
-	fmt.Println(args...)
-
 	if err != nil {
 		return nil, err
 	}
 
 	rows, err := r.Pool.Query(ctx, sql, args...)
 	if err != nil {
-		fmt.Println(err)
 		return []domain.User{}, err
 	}
 	defer rows.Close()
 
 	for rows.Next() {
 		var user domain.User
-		err = rows.Scan(&user.Id, &user.Username, &user.Password, &user.CreatedAt, &user.UpdatedAt, &user.Friends)
+		err = rows.Scan(&user.Id, &user.Username, &user.Password, &user.Friends, &user.CreatedAt, &user.UpdatedAt)
 		if err != nil {
 			return []domain.User{}, err
 		}
