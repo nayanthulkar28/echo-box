@@ -1,8 +1,8 @@
 package v1
 
 import (
-	"anon-chat/internal/repo"
-	"anon-chat/pkg"
+	"echo-box/internal/repo"
+	"echo-box/pkg"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -24,7 +24,7 @@ func NewMiddleware(ar *repo.UserRepo) *Middleware {
 }
 
 func (m *Middleware) CORSMiddleware(c *gin.Context) {
-	c.Writer.Header().Set("Access-Control-Allow-Origin", "http://localhost:3000")
+	c.Writer.Header().Set("Access-Control-Allow-Origin", "http://localhost:4000")
 	c.Writer.Header().Set("Access-Control-Allow-Credentials", "true")
 	c.Writer.Header().Set("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT")
 	c.Writer.Header().Set("Access-Control-Allow-Headers", "Origin,Accept,X-Requested-With,Content-Type,Authorization")

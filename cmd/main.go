@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	"anon-chat/config"
-	"anon-chat/internal/app"
+	"echo-box/config"
+	"echo-box/internal/app"
 )
 
 func main() {

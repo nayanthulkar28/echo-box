@@ -1,9 +1,9 @@
 package usecase
 
 import (
-	"anon-chat/internal/domain"
-	"anon-chat/internal/repo"
 	"context"
+	"echo-box/internal/domain"
+	"echo-box/internal/repo"
 )
 
 type UserUsecase struct {

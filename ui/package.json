@@ -1,5 +1,5 @@
 {
-  "name": "anon-chat-ui",
+  "name": "ui",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -9,7 +9,6 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "anon-chat-ui": "file:",
     "axios": "^1.7.7",
     "react": "^18.3.1",
     "react-chat-module": "^1.1.2",
@@ -19,6 +18,7 @@
     "react-scripts": "5.0.1",
     "react-use-websocket": "^4.9.0",
     "sockjs-client": "^1.6.1",
+    "ui": "file:",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

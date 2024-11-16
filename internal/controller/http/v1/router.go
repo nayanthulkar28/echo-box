@@ -1,7 +1,7 @@
 package v1
 
 import (
-	"anon-chat/internal/usecase"
+	"echo-box/internal/usecase"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -10,7 +10,7 @@ import (
 func NewRouter(handler *gin.Engine, m *Middleware, au *usecase.AuthUsecase, uu *usecase.UserUsecase,
 	fu *usecase.FriendUsecase, wsM *WSManager, ex *Explorer) {
 	handler.Use(m.CORSMiddleware)
-	h := handler.Group("api/v1")
+	h := handler.Group("/echo-box/api/v1")
 	h.GET("/ping", func(ctx *gin.Context) {
 		ctx.JSON(http.StatusOK, "service is up!!!")
 	})

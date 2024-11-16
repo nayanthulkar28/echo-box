@@ -8,7 +8,7 @@ import (
 	"github.com/golang-jwt/jwt"
 )
 
-var SecretKey = []byte("anon-chat-jwt-secret-key")
+var SecretKey = []byte("echo-box-jwt-secret-key")
 
 func CreateToken(username string) (string, error) {
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256,
