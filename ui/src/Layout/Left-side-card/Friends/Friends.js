@@ -23,7 +23,7 @@ const Friends = ({onSwitch}) => {
     })
 
     useEffect(() => {
-        axios.get("http://localhost:8090/echo-box/api/v1/users/friends",{
+        axios.get("http://localhost:8090/echo-box-be/api/v1/users/friends",{
             headers: {
                 "Authorization": "Bearer " + token
             }}

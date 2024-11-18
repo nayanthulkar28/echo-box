@@ -10,7 +10,7 @@ const WebSocketProvider = ({children}) => {
     const userContext = useAuth()
 
     useEffect(() => {
-        const ws = new WebSocket(`http://localhost:8090/echo-box/api/v1/ws/chat?token=${token}`)
+        const ws = new WebSocket(`http://localhost:8090/echo-box-be/api/v1/ws/chat?token=${token}`)
         socket.current = ws
     
         ws.onopen = () => {

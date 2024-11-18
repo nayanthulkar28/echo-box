@@ -18,7 +18,7 @@ const Login = () => {
     })
 
     const handleSignUp = () => {
-        axios.post("http://localhost:8090/echo-box/api/v1/sign-up",
+        axios.post("http://localhost:8090/echo-box-be/api/v1/sign-up",
             {
                 username: username,
                 password: password
@@ -31,7 +31,7 @@ const Login = () => {
     }
 
     const handleLogin = () => {
-        axios.post("http://localhost:8090/echo-box/api/v1/login",
+        axios.post("http://localhost:8090/echo-box-be/api/v1/login",
             {
                 username: username,
                 password: password

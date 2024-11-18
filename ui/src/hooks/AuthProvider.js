@@ -24,7 +24,7 @@ const AuthProvider = ({children}) => {
 
     useEffect(()=>{
         if(token!=null && user==null) {
-            axios.get("http://localhost:8090/echo-box/api/v1/users",{
+            axios.get("http://localhost:8090/echo-box-be/api/v1/users",{
                 headers: {
                     "Authorization": "Bearer " + token
                 }

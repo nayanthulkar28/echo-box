@@ -7,6 +7,6 @@ COPY pkg pkg
 COPY go.mod go.mod
 COPY go.sum go.sum
 COPY .env.production .env
-EXPOSE 8080
+EXPOSE 8090
 RUN go build cmd/main.go
 ENTRYPOINT [ "./main" ]
