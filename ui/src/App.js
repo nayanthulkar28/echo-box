@@ -9,20 +9,20 @@ import AuthProvider from './hooks/AuthProvider';
 function App() {
   const router = createBrowserRouter([
     {
-      path: "/echo-box/login",
+      path: "/login",
       element: <Login/>
     },
     {
       element: <ProtectedRoutes/>,
       children: [
         {
-          path: "/echo-box",
+          path: "/",
           element: <Home/>
         }
       ]
     },
     {
-      path: "/echo-box/*",
+      path: "/*",
       element: <NotFound/>
     }
   ])
