@@ -4,7 +4,7 @@ import WebSocketProvider from "../../hooks/Websocket"
 
 const ProtectedRoutes = () => {
     const userContext = useAuth()
-    if(userContext.user == null) return <Navigate to="/login" replace/>
+    if(userContext.user == null) return <Navigate to="/echo-box/login" replace/>
     return (
         <WebSocketProvider> 
             <Outlet/>

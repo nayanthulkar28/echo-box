@@ -13,7 +13,7 @@ const Login = () => {
 
     useEffect(() => {
         if(userContext.user != null) {
-            navigate("/", {replace: true})
+            navigate("/echo-box", {replace: true})
         }
     })
 
@@ -40,7 +40,7 @@ const Login = () => {
             userContext.LoginAction(res.data)
             setUsername("")
             setPassword("")
-            navigate("/")
+            navigate("/echo-box")
         })
         .catch((error)=>{
             console.log(error)
