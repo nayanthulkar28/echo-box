@@ -42,4 +42,4 @@ jobs:
             docker rm echo-box || true
             docker rmi $(docker images -q ${{secrets.DOCKER_USERNAME}}/echo-box) || true
             docker pull ${{secrets.DOCKER_USERNAME}}/echo-box:${{env.docker_tag}}
-            docker run -d --name echo-box -p 8090:8090 ${{secrets.DOCKER_USERNAME}}/echo-box:${{env.docker_tag}}
+            docker run --network="host" -d --name echo-box -p 8090:8090 ${{secrets.DOCKER_USERNAME}}/echo-box:${{env.docker_tag}}
