@@ -17,8 +17,7 @@ var (
 		ReadBufferSize:  1024,
 		WriteBufferSize: 1024,
 		CheckOrigin: func(r *http.Request) bool {
-			origin := r.Header.Get("origin")
-			return origin == "http://localhost:4000"
+			return true
 		},
 	}
 )
