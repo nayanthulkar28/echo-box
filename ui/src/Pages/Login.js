@@ -10,6 +10,7 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const navigate=useNavigate()
     const userContext = useAuth()
+    const apiHost = process.env.REACT_APP_API_URL
 
     useEffect(() => {
         if(userContext.user != null) {
@@ -18,7 +19,7 @@ const Login = () => {
     })
 
     const handleSignUp = () => {
-        axios.post("http://localhost:8090/echo-box-be/api/v1/sign-up",
+        axios.post(`${apiHost}/sign-up`,
             {
                 username: username,
                 password: password
@@ -31,7 +32,7 @@ const Login = () => {
     }
 
     const handleLogin = () => {
-        axios.post("http://localhost:8090/echo-box-be/api/v1/login",
+        axios.post(`${apiHost}/login`,
             {
                 username: username,
                 password: password

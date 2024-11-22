@@ -3,6 +3,7 @@ WORKDIR /workspace-ui
 COPY public public
 COPY src src
 COPY package.json package.json
+COPY .env.production .env.production
 RUN npm install
 RUN npm install -g serve
 RUN npm run build

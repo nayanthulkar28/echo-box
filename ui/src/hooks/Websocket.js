@@ -8,9 +8,10 @@ const WebSocketProvider = ({children}) => {
     const token = useAuth().token
     const callbacks = useRef({})
     const userContext = useAuth()
+    const apiHost = process.env.REACT_APP_API_URL
 
     useEffect(() => {
-        const ws = new WebSocket(`http://localhost:8090/echo-box-be/api/v1/ws/chat?token=${token}`)
+        const ws = new WebSocket(`${apiHost}/ws/chat?token=${token}`)
         socket.current = ws
     
         ws.onopen = () => {

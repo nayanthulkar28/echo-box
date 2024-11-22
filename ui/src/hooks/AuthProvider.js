@@ -6,6 +6,7 @@ const AuthContext = createContext()
 const AuthProvider = ({children}) => {
     const [user,setUser] = useState(null)
     const [token,setToken] = useState(localStorage.getItem("token_"+user?.username) || localStorage.getItem("token"))
+    const apiHost = process.env.REACT_APP_API_URL
 
     const LoginAction = (data) => {
         setUser(data.user)
@@ -24,7 +25,7 @@ const AuthProvider = ({children}) => {
 
     useEffect(()=>{
         if(token!=null && user==null) {
-            axios.get("http://localhost:8090/echo-box-be/api/v1/users",{
+            axios.get(`${apiHost}/users`,{
                 headers: {
                     "Authorization": "Bearer " + token
                 }
@@ -36,7 +37,7 @@ const AuthProvider = ({children}) => {
                 console.log(error)
             })
         }
-    },[token,user])
+    },[apiHost,token,user])
 
     return(
         <AuthContext.Provider value={{user,token,LoginAction,LogoutAction}}>

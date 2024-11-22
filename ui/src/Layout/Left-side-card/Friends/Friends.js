@@ -11,6 +11,8 @@ const Friends = ({onSwitch}) => {
     const token = userContext.token
     const [friends, setFriends] = useState([])
     const friendList=[]
+    const apiHost = process.env.REACT_APP_API_URL
+
     friends.forEach(friend=>{
         friendList.push(
         <div className='friend-card-container' key={friend.username}>
@@ -23,7 +25,7 @@ const Friends = ({onSwitch}) => {
     })
 
     useEffect(() => {
-        axios.get("http://localhost:8090/echo-box-be/api/v1/users/friends",{
+        axios.get(`${apiHost}/users/friends`,{
             headers: {
                 "Authorization": "Bearer " + token
             }}
@@ -34,7 +36,7 @@ const Friends = ({onSwitch}) => {
         .catch((error)=>{
             console.log(error)
         })
-    },[token])
+    },[apiHost,token])
 
     ws.RegisterCallback("add-friend", (friend) => {
         setFriends((prev) => [friend, ...prev])
