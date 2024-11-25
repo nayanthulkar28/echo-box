@@ -1,5 +1,6 @@
 import './SystemCompatible.css'
 import errorImg from '../../assets/error.png'
+import Title from '../../Layout/TitleBar/Title/Title'
 
 const SystemCompatible = ({children}) => {
     const width = window.innerWidth
@@ -7,7 +8,8 @@ const SystemCompatible = ({children}) => {
     return (
         <div className='container'>
             <div className='holder'>
-                <img src={errorImg}/>
+                <Title class_name="title-login"/>
+                <img src={errorImg} alt=''/>
                 <p>Sorry, currently app is not supported for smaller devices. <br />
                 Please visit the site in desktop.</p>
             </div>
