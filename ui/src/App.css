@@ -19,3 +19,9 @@
   background-color: var(--app-color-1);
   padding: 16px 200px 32px;
 }
+
+@media screen and (max-width: 1400px) {
+  .app {
+    padding: 0;
+  }
+}
