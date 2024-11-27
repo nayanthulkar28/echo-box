@@ -9,12 +9,19 @@ const Chat = ({friend, isFriend, messages, appendMessage}) => {
     const messageList = []
     const [status, setStatus] = useState("Add Friend")
 
+    let prevMessageSender = 0
     messages.forEach((message,idx)=>{    
+        console.log(message.send, prevMessageSender)
         messageList.push(
             <div key={idx} className="chat-message-container">
-                <div className={"chat-message " + ((message.send===1)?"float-right":"float-left")}>{message.value}</div>
+                <div className={"chat-message" + 
+                    ((message.send===1)?" float-right":" float-left") +
+                    ((prevMessageSender!=0 && prevMessageSender!=message.send)?" bottom-margin-more":" bottom-margin-less")}>
+                        {message.value}
+                </div>
             </div>
         )
+        prevMessageSender=message.send
     })
 
     const handleButtonStatus = () => {

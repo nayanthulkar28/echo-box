@@ -71,3 +71,11 @@
 .float-left {
     float: left;
 }
+
+.bottom-margin-less {
+    margin-bottom: 0px;
+}
+
+.bottom-margin-more {
+    margin-bottom: 20px;
+}

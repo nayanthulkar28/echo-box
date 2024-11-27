@@ -3,7 +3,6 @@ package v1
 import (
 	"echo-box/internal/domain"
 	"echo-box/internal/usecase"
-	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -28,7 +27,6 @@ func (r *ChatRoutes) ServerChatWS(c *gin.Context) {
 	token := c.Request.URL.Query().Get("token")
 	conn, err := websocketUpgrader.Upgrade(c.Writer, c.Request, nil)
 	if err != nil {
-		fmt.Println("err", err)
 		errorResponse(c, http.StatusInternalServerError, err.Error())
 		return
 	}
