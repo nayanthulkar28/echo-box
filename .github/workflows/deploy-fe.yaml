@@ -41,4 +41,4 @@ jobs:
             docker rm echo-box-ui || true
             docker rmi $(docker images -q ${{secrets.DOCKER_USERNAME}}/echo-box-ui) || true
             docker pull ${{secrets.DOCKER_USERNAME}}/echo-box-ui:${{env.docker_tag}}
-            docker run -d --name echo-box-ui -p 4000:4000 ${{secrets.DOCKER_USERNAME}}/echo-box-ui:${{env.docker_tag}}
+            docker run -d --name echo-box-ui -p --restart=unless-stopped 4000:4000 ${{secrets.DOCKER_USERNAME}}/echo-box-ui:${{env.docker_tag}}
