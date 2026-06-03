@@ -16,7 +16,7 @@ const Chat = ({friend, isFriend, messages, appendMessage}) => {
             <div key={idx} className="chat-message-container">
                 <div className={"chat-message" + 
                     ((message.send===1)?" float-right":" float-left") +
-                    ((prevMessageSender!=0 && prevMessageSender!=message.send)?" bottom-margin-more":" bottom-margin-less")}>
+                    ((prevMessageSender!==0 && prevMessageSender!==message.send)?" bottom-margin-more":" bottom-margin-less")}>
                         {message.value}
                 </div>
             </div>
