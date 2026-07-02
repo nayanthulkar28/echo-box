@@ -18,3 +18,9 @@
     color: var(--app-color-4);
     font-size: 40px;
 }
+
+.title-home-mobile{
+    color: var(--text-color);
+    font-size: 24px;
+    margin-top: 15px;
+}

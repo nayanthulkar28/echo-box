@@ -2,6 +2,8 @@ import { useState } from 'react';
 import LeftCard from '../Layout/Left-side-card/Left-side-card';
 import RightCard from '../Layout/Right-side-card/Right-side-card';
 import TitleBar from '../Layout/TitleBar/TitleBar';
+import TitleBarMobile from '../Layout/TitleBar/TitleBarMobile';
+import BottomNavBar from '../Layout/TitleBar/NavBar/BottomNavBar';
 import './Home.css'
 import { useWebSocket } from '../hooks/Websocket';
 
@@ -36,13 +38,19 @@ const Home = () => {
         })
     })
 
+    const isMobile = window.innerWidth < 1400
+    const titleBar = isMobile 
+        ? <TitleBarMobile/> 
+        : <TitleBar onSwitch={handleComponentSwitch}/>
+
     return(
         <div className='home'>
-            <TitleBar onSwitch={handleComponentSwitch}/>
+            {titleBar}
             <div className='home-body'>
-                <LeftCard onSwitch={handleComponentSwitch}/>
-                <RightCard component={rightComponent}/>
+                {!isMobile && <LeftCard onSwitch={handleComponentSwitch}/>}
+                <RightCard component={rightComponent} onSwitch={handleComponentSwitch}/>
             </div>
+            {isMobile && <BottomNavBar onSwitch={handleComponentSwitch}/>}
         </div>
     );
 }

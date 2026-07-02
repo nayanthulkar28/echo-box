@@ -4,8 +4,9 @@ import ExplorePage from './Explore-page/Explore-page';
 import ProfilePage from './Profile-page/Profile-page';
 import './Right-side-card.css'
 import { useWebSocket } from '../../hooks/Websocket';
+import FriendsPage from './Friends-page/Friends-page';
 
-const RightCard = ({component}) => {
+const RightCard = ({component, onSwitch}) => {
     const [messages, setMessages] = useState({})
     const ws = useWebSocket()
 
@@ -36,6 +37,7 @@ const RightCard = ({component}) => {
                     messages={messages[component.component.friendName]?messages[component.component.friendName]:[]}
                     appendMessage={appendMessage}/>}
             {component.component.name==="profile" && <ProfilePage/>}
+            {component.component.name==="friends" && <FriendsPage onSwitch={onSwitch}/>}
         </div>
     );
 }

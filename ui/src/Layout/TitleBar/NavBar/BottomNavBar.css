@@ -1,0 +1,21 @@
+.bottom-nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--background-color);
+    border-top: 1px solid var(--border-color);
+    width: 100%;
+}
+
+.bottom-nav-bar-item {
+    width: 100%;
+    list-style: none;
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--text-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

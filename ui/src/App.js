@@ -30,9 +30,9 @@ function App() {
   return (
     <div className="app">
       <AuthProvider>
-        <SystemCompatible>
+        {/* <SystemCompatible> */}
           <RouterProvider router={router}/>
-        </SystemCompatible>
+        {/* </SystemCompatible> */}
       </AuthProvider>
     </div>
   );
