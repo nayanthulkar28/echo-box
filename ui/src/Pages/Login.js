@@ -11,6 +11,8 @@ const Login = () => {
     const navigate=useNavigate()
     const userContext = useAuth()
     const apiHost = process.env.REACT_APP_API_URL
+    const [showPopUp, setShowPopUp] = useState(false)
+    const [popUpMessage, setPopUpMessage] = useState("")
 
     useEffect(() => {
         if(userContext.user != null) {
@@ -24,11 +26,20 @@ const Login = () => {
                 username: username,
                 password: password
             }
-        ).catch((error)=>{
-            console.log(error)
+        )
+        .then((res)=>{
+            setUsername("")
+            setPassword("")
+            setShowPopUp(true)
+            setPopUpMessage(res.data?.status)
+            setTimeout(()=>setShowPopUp(false),3000)
         })
-        setUsername("")
-        setPassword("")
+        .catch((error)=>{
+            setShowPopUp(true)
+            setPopUpMessage(error?.response.data.error)
+            setTimeout(()=>setShowPopUp(false),3000)
+            console.log(error.response)
+        })
     }
 
     const handleLogin = () => {
@@ -50,6 +61,7 @@ const Login = () => {
 
     return(
         <div className='login-container'>
+            {showPopUp && <div className="pop-up">{popUpMessage}</div>}
             <div className="login-form">
                 <div className='login-title'>
                     <Title class_name="title-login"/>

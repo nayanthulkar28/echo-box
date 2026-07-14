@@ -14,7 +14,7 @@
 .app {
   display: flex;
   justify-content: center;
-  height: 100vh;
+  height: 100dvh;
   align-items: center;
   background-color: var(--app-color-1);
   padding: 16px 200px 32px;
