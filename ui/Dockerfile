@@ -2,7 +2,7 @@ FROM node:21-alpine
 WORKDIR /workspace-ui
 COPY public public
 COPY src src
-COPY package.json package.json
+COPY package.json package-lock.json ./
 COPY .env.production .env.production
 ENV CI=false
 RUN npm install
