@@ -5,7 +5,6 @@ import Login from './Pages/Login';
 import ProtectedRoutes from './Components/ProtectedRoutes/ProtectedRoutes';
 import NotFound from './Components/NotFound/NotFound';
 import AuthProvider from './hooks/AuthProvider';
-import SystemCompatible from './Components/SystemCompatible/SystemCompatible';
 
 function App() {
   const router = createBrowserRouter([
@@ -30,9 +29,7 @@ function App() {
   return (
     <div className="app">
       <AuthProvider>
-        {/* <SystemCompatible> */}
           <RouterProvider router={router}/>
-        {/* </SystemCompatible> */}
       </AuthProvider>
     </div>
   );
